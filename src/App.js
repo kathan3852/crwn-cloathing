@@ -4,6 +4,7 @@ import HomePage from './pages/homepage/homepage.component'
 import ShopPage from './pages/shop/shop.component';
 import CheckoutPage from './pages/checkout/checkout.component';
 import Header from './components/header/header.component';
+import CollectionPage from './pages/collection/collection.component';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
 import {Routes, Route, Navigate } from 'react-router-dom';
 import { auth,createUserProfileDocument } from './firebase/firebase.utils';
@@ -44,7 +45,9 @@ componentWillUnmount(){
         <Header />
        <Routes>
        <Route exact path='/' element={<HomePage />} /> 
-       <Route  path='/shop' element={<ShopPage />} />
+       <Route  path='/shop' element={<ShopPage />} >
+       </Route>
+       <Route exact path='/shop/:collectionId' element={<CollectionPage />} />
        <Route  exact path='/checkout' element={<CheckoutPage />} />
        <Route exact path='/signin' element={ this.props.currentUser? <Navigate to='/' /> : <SignInAndSignUpPage />} />
        </Routes>
