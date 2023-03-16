@@ -5,7 +5,9 @@ const selectShop= state => state.shop;
 
 export const selectCollections = createSelector(
     [selectShop],
-    shop=> shop.collections
+    shop=> {
+      //console.log(shop.collections);
+      return shop.collections}
 )
 export const selectCollectionsForPreview= createSelector( 
   [selectCollections],
@@ -15,6 +17,9 @@ export const selectCollectionsForPreview= createSelector(
 export const selectCollection = collectionUrlParam => 
   createSelector(
     [selectCollections],
-    collections => collections[collectionUrlParam]
+    collections => {
+      console.log(collections[collectionUrlParam])
+      return collections[collectionUrlParam]
+    }
   )
 

@@ -6,7 +6,6 @@ import { useParams } from "react-router-dom";
 import './collection.styles.css'
 
 const CollectionPage= ({collection})=> {
-    console.log(collection)
     const{title,items}=collection
     return(
     <div className="collection-page">
@@ -21,10 +20,11 @@ const CollectionPage= ({collection})=> {
     </div>
 )}
 
-let {collectionId}= useParams();
+//const params= useParams();
+//const {collectionId} = params;
 
 const mapStateToProps= (state) => ({
-    collection: selectCollection(collectionId)(state)
+    collection: selectCollection('sneakers')(state)
 })
 
 export default connect(mapStateToProps)(CollectionPage);
