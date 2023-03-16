@@ -32,6 +32,7 @@ componentDidMount(){
      
     }
     setCurrentUser(userAuth);
+
   })
 }
 
@@ -57,11 +58,13 @@ componentWillUnmount(){
 }
 
 const mapStateToProps= createStructuredSelector({
-  currentUser : SelectCurrentUser
+  currentUser : SelectCurrentUser,
+
 })
 
 const mapDispatchToProps= dispatch => ({
-  setCurrentUser : user => dispatch(setCurrentUser(user))
+  setCurrentUser : user => dispatch(setCurrentUser(user)),
+  
 })
 
 export default connect(mapStateToProps,mapDispatchToProps)(App);
