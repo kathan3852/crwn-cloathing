@@ -5,8 +5,10 @@ import { selectCollection } from "../../redux/shop/shop.selectors";
 import { useParams } from "react-router-dom";
 import './collection.styles.css'
 
+const collectionId= null;
 const CollectionPage= ({collection})=> {
     const{title,items}=collection
+    // collectionId = useParams().collectionId;
     return(
     <div className="collection-page">
         <h2 className="title">{title}</h2>
@@ -19,10 +21,7 @@ const CollectionPage= ({collection})=> {
         </div>
     </div>
 )}
-
-//const params= useParams();
-//const {collectionId} = params;
-
+//console.log(collectionId)
 const mapStateToProps= (state) => ({
     collection: selectCollection('sneakers')(state)
 })

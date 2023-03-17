@@ -6,12 +6,15 @@ import CheckoutPage from './pages/checkout/checkout.component';
 import Header from './components/header/header.component';
 import CollectionPage from './pages/collection/collection.component';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
+import WithSpinner from './components/with-spinner/with-spinner.component';
 import {Routes, Route, Navigate } from 'react-router-dom';
 import { auth,createUserProfileDocument } from './firebase/firebase.utils';
 import { connect } from 'react-redux';
 import { setCurrentUser } from './redux/user/user.action';
 import { SelectCurrentUser } from './redux/user/user.selectors';
 import { createStructuredSelector } from 'reselect';
+
+const collectionPageWithSpinner= WithSpinner(CollectionPage)
 
 class App extends React.Component {
   
