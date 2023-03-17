@@ -5,7 +5,7 @@ import { selectCollection } from "../../redux/shop/shop.selectors";
 import { useParams } from "react-router-dom";
 import './collection.styles.css'
 
-const collectionId= null;
+//const collectionId= null;
 const CollectionPage= ({collection})=> {
     const{title,items}=collection
     // collectionId = useParams().collectionId;
